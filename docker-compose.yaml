@@ -2,6 +2,17 @@ version: '3'
 
 services:
 
+  app:
+    restart: always
+    build:
+      context: ./
+    container_name: rewe_distributor
+    ports:
+      - 8080:8080
+    depends_on:
+      - kafka
+      - zookeeper
+
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     environment:

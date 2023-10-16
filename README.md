@@ -8,6 +8,7 @@
 **Tests:**
 1) EmailPartitionerTestIT - test correct partitioner
 2) E2ETestIT - test whole scenario
+3) MoveZerosToEndTest - task during an interview 
 
 
 
