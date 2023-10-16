@@ -1,0 +1,32 @@
+config:
+  partition-filter:
+    - gmail.com
+    - microsoft.com
+    - amazon.com
+  topic:
+      name: test-email
+      partition: 3
+      replication: 1
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:email-statistic-db
+    username: admin
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: test-rewe
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: ERROR
+    com.rewe.distributor: DEBUG
+    org.springframework.web: ERROR
